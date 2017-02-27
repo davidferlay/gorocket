@@ -4,7 +4,7 @@ import (
   "fmt"
   "net/http"
   "bytes"
-  "github.com/skilld-labs/gorocket/api"
+  "github.com/detached/gorocket/api"
 )
 
 type settingResponse struct {

@@ -2,7 +2,7 @@ package rest
 
 import (
 	"net/http"
-	"github.com/skilld-labs/gorocket/api"
+	"github.com/detached/gorocket/api"
 )
 
 type infoResponse struct {

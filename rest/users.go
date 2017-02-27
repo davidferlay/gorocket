@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"bytes"
 	"errors"
-	"github.com/skilld-labs/gorocket/api"
+	"github.com/detached/gorocket/api"
 )
 
 type logoutResponse struct {
