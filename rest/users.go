@@ -35,6 +35,11 @@ type userResponse struct {
 	Success bool     `json:"success"`
 }
 
+type rolesResponse struct {
+	Roles   []api.Role `json:"roles"`
+	Success bool       `json:"success"`
+}
+
 type preferencesResponse struct {
 	Preferences api.UserPreferences `json:"preferences"`
 	Success     bool                `json:"success"`
@@ -160,4 +165,12 @@ func (c *Client) SetPreferences(id string, preferences *api.UserPreferences) err
 	request, _ := http.NewRequest(http.MethodPost, c.getUrl()+"/api/v1/users.setPreferences", bytes.NewReader(body))
 
 	return c.doRequest(request, &preferencesResponse{})
+}
+
+func (c *Client) GetRoles() (*rolesResponse, error) {
+	roles := new(rolesResponse)
+	request, _ := http.NewRequest("GET", c.getUrl()+"/api/v1/roles.list", nil)
+
+	err := c.doRequest(request, roles)
+	return roles, err
 }

@@ -63,6 +63,15 @@ type UserCredentials struct {
 	Password string `json:"pass"`
 }
 
+type Role struct {
+	Id           string `json:"_id,omitempty"`
+	Scope        string `json:"scope,omitempty"`
+	Description  string `json:"description,omitempty"`
+	Mandatory2fa bool   `json:"mandatory2fa,omitempty"`
+	Name         string `json:"name,omitempty"`
+	Protected    bool   `json:"protected,omitempty"`
+}
+
 type Message struct {
 	Id        string `json:"_id"`
 	ChannelId string `json:"rid"`
